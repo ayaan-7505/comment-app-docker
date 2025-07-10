@@ -5,8 +5,5 @@ Dockerfile
 .dockerignore
 .env
 *.log
-*.md
 .vscode
-*.ts
-*.tsx
-*.map
+*.md

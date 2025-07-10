@@ -7,6 +7,4 @@ Dockerfile
 *.log
 *.md
 .vscode
-*.ts
-*.tsx
-*.map
+
