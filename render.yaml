@@ -1,6 +1,6 @@
 databases:
   - name: comment-db
-    databaseName: comment-db
+    databaseName: comment_db
     user: ayaan
 
 services:
