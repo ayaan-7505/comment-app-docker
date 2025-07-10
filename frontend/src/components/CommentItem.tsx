@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CommentForm from './CommentForm';
 import type { CommentType } from '../types';
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 interface Props {
   comment: CommentType;
@@ -50,7 +51,7 @@ export default function CommentItem({
     const token = localStorage.getItem('token');
     try {
       const res = await axios.patch(
-        `http://localhost:5000/api/comments/${comment.id}`,
+        `${baseURL}/api/comments/${comment.id}`,
         { content: editedContent },
         {
           headers: {
@@ -71,7 +72,7 @@ export default function CommentItem({
     const token = localStorage.getItem('token');
     try {
       setIsDeleting(true);
-      await axios.delete(`http://localhost:5000/api/comments/${comment.id}`,{
+      await axios.delete(`${baseURL}/api/comments/${comment.id}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -89,7 +90,7 @@ export default function CommentItem({
   const handleRestore = async () => {
   const token = localStorage.getItem('token');
   try {
-    await axios.post(`http://localhost:5000/api/comments/${comment.id}/restore`, {}, {
+    await axios.post(`${baseURL}/api/comments/${comment.id}/restore`, {}, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

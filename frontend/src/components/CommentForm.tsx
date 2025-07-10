@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 interface Props {
   parentId: number | null;
@@ -22,7 +23,7 @@ export default function CommentForm({ parentId, onCommentAdded }: Props) {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/comments',
+        `${baseURL}/api/comments`,
         {
           content,
           parentId: parentId ?? null, // Always include explicitly

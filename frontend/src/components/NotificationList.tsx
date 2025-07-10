@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NotificationItem from '../components/NotificationItem';
 import type { NotificationType } from '../types';
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export default function NotificationList() {
   const [notifications, setNotifications] = useState<NotificationType[]>([]);
@@ -9,7 +10,7 @@ export default function NotificationList() {
   const fetchNotifications = async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await axios.get('http://localhost:5000/api/notifications', {
+      const res = await axios.get(`${baseURL}/api/notifications`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -24,7 +25,7 @@ export default function NotificationList() {
     const token = localStorage.getItem('token');
     try {
       await axios.patch(
-        `http://localhost:5000/api/notifications/${id}?read=${!isCurrentlyRead}`,
+        `${baseURL}/api/notifications/${id}?read=${!isCurrentlyRead}`,
         {},
         {
           headers: {

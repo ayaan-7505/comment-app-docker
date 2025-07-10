@@ -5,6 +5,7 @@ import CommentItem from '../components/CommentItem';
 import CommentForm from '../components/CommentForm';
 import NotificationList from '../components/NotificationList';
 import type { CommentType } from '../types';
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 export default function CommentPage() {
   const [comments, setComments] = useState<CommentType[]>([]);
@@ -39,7 +40,7 @@ export default function CommentPage() {
 
   const fetchComments = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/comments');
+      const res = await axios.get(`${baseURL}/api/comments`);
       const mapped = res.data.map(mapComment);
       setComments(mapped);
     } catch (err) {
