@@ -1,0 +1,28 @@
+# Environment files
+.env
+**/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode
+*.swp
+
+# Build outputs
+**/dist/
+**/build/
+
+# Database data volume
+db/data/
+
+# Docker artifacts
+*.pid

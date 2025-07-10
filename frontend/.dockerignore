@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+Dockerfile
+.dockerignore
+.env
+*.log
+*.md
+.vscode
+*.ts
+*.tsx
+*.map
