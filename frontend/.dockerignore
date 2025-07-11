@@ -1,7 +1,4 @@
 node_modules
-dist
-build
-.dockerignore
 .env
 *.log
 .vscode
