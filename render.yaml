@@ -29,5 +29,5 @@ services:
     dockerfilePath: ./frontend/Dockerfile
     autoDeploy: true
     envVars:
-      - key: VITE_BACKEND_URL
-        value: https://backend.onrender.com
+      - key: VITE_API_URL
+        value: https://comment-app-docker-rfyb.onrender.com
