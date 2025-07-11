@@ -5,6 +5,9 @@ dotenv.config();
 
 const db = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,  // Set to true in production with proper SSL certs
+  },
 });
 
 // Optional: Try connecting immediately to verify
