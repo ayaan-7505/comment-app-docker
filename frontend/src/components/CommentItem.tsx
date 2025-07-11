@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CommentForm from './CommentForm';
 import type { CommentType } from '../types';
-const baseURL = import.meta.env.VITE_BACKEND_URL;
+const baseURL = import.meta.env.VITE_API_URL;
 
 interface Props {
   comment: CommentType;

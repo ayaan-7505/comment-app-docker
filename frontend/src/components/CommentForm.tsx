@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-const baseURL = import.meta.env.VITE_BACKEND_URL;
+const baseURL = import.meta.env.VITE_API_URL;
 
 interface Props {
   parentId: number | null;

@@ -5,7 +5,7 @@ import CommentItem from '../components/CommentItem';
 import CommentForm from '../components/CommentForm';
 import NotificationList from '../components/NotificationList';
 import type { CommentType } from '../types';
-const baseURL = import.meta.env.VITE_BACKEND_URL;
+const baseURL = import.meta.env.VITE_API_URL;
 
 export default function CommentPage() {
   const [comments, setComments] = useState<CommentType[]>([]);
