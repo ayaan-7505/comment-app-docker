@@ -11,7 +11,12 @@ import './config/db'; // Ensure the database connection is established
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://comment-app-docker-1.onrender.com',
+  credentials: true, // optional — only needed if you're using cookies/sessions
+}));
+app.options('*', cors()); // Handle preflight requests
+
 app.use(express.json());
 
 
